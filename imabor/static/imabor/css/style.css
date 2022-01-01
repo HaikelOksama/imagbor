@@ -751,7 +751,7 @@ div.image-box {
 .abt-in.sec0{
   background: url(https://d2m6ke2px6quvq.cloudfront.net/uploads/2020/07/14/a78d521e-d555-45b2-bd98-9843310dc307.jpg);
   background-size: cover;
-  
+  background-position: center center;
   height: 450px;
   text-align: center; 
   background-color:rgb(0, 0, 0);
