@@ -18,7 +18,7 @@ from django.urls import path
 from imabor.views import base_url, home_view, nature_view, space_view, building_view, animasi_view, dynamic_image_view, about_view, result_view, subtags_view
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls, name='admin'),
     path('', home_view, name='home'),
     path('images/', home_view, name='home'),
     path('nature/', nature_view, name='nature'),

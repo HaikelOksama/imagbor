@@ -1,6 +1,6 @@
 from django.db import models
 from django.templatetags.static import static
-
+from django.contrib.auth.models import Permission, User
 # Create your models here.
 #class Tag(models.Model):
     #name = models.CharField(max_length=100, null=True)
@@ -15,6 +15,8 @@ class Image(models.Model):
     hidden  = models.BooleanField(default=False)
     caption = models.CharField(max_length=200, default="high qualitY")
     
+  
+
     def nature_len():
         return Image.objects.filter(tags='nature').count()
 

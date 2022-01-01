@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from .models import Image
 from django.urls import reverse
 from django.http import Http404
-
+from django.contrib.auth.models import Permission, User
     
 
 def base_url(request):
@@ -13,7 +13,7 @@ def base_url(request):
         "name" : "Home",
         'nat' : nature, 
     }
-    return render(request,"home.html", context) 
+    return render(request,"home.html", context, x) 
 
 # Create your views here.
 def home_view(request):

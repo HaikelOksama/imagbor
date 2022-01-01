@@ -62,11 +62,18 @@
       <a href="{% url 'about' %}">About Site</a>
     </div>
       <div style="float: right;" class="dropdown">
-        <button class="dropbtn">Akun</button>
+        <button class="dropbtn"><span class="fa fa-user-circle"></span> Akun</button>
+        {% if user.is_authenticated == False %}
         <div class="dropdown-content">
-          <a href="#">LOGIN</a>
-          <a href="#">DAFTAR</a>
+          <a href="/admin" target="__blank">LOGIN</a>
         </div>
+        {% else %}
+        <div class="dropdown-content">
+          <center><h3>Selamat Datang <span>{{ user.get_username }}</span></h3></center>
+          <a href="/admin" target="__blank">Your Account</a>
+          <a href="/admin/logout">Logout</a>
+        </div>
+        {% endif %}
       </div>
     </div>
 </div>
@@ -115,7 +122,9 @@
                 <br>
                 
             </ul>
-            <a class="about" href="{% url 'about' %}">ABOUT</a>
+            {% if user.is_authenticated %}
+            <center><a class="about" href="/admin">Admin Area</a></center>
+            {% endif %}
             <img class="sideimg" src="{% static 'imabor/image/image3-1-1.gif' %}">
         </div>
     </div>
@@ -140,6 +149,9 @@
 
 <div class="footer">
     <h4>© M. Haikel Oksama</h4>
+    {% if user.is_authenticated %}
+    <p>{{ user.get_username }}</p>
+    {% endif %}
     <p>Sistem Informasi Kelas 3i</p>
     <a href="https://www.instagram.com/haikel.oxama/" target="_blank"><i class="fa fa-instagram" id="facebook"></i></a>
     <a href=""><i class="fa fa-twitter" id="twitter"></i></a>

@@ -1,5 +1,5 @@
 from django import template
-
+from django.contrib.auth.models import Permission, User
 from imabor.models import Image
 register = template.Library()
 #this will create custom tags for template
@@ -19,4 +19,6 @@ def building_len():
 @register.simple_tag
 def space_len():
     return Image.objects.filter(tags='space').count()
+
+
 
