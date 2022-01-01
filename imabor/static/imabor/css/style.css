@@ -64,7 +64,7 @@ a {
 .header {
   font-family: 'Bungee Shade', cursive;
   text-align: center;
-  background: url("header.jpg");
+  background: url("https://images.unsplash.com/photo-1634738881327-50dd958f557a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1760&q=80");
   background-size: cover;
   padding: 10px;
   border-bottom: solid 5px #d38005;
