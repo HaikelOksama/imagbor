@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %}
+{{ name }}
+{% endblock %}
+
+{% block content %}
+
+{% comment %} <div class="wrapper">
+    <div class="top-container">
+        <h2> ABOUT </h2>
+    </div>
+    
+</div> {% endcomment %}
+
+<div class="row b">
+    <div class="wrapper">
+    <div class="col side">
+    </div>
+    <div style="width:100%;" class="col mid">
+        
+        <div class="abt-in sec0">
+        <div class="abtext">
+            <h1 style="line-height: 1.2;"> ABOUT </h1>
+            <h3> Why built the app? </h3><br>
+            <p style="line-height: 1.2;"> Website ini dibuat untuk memenuhi tugas Akhir Semester Matakuliah Pemrograman Web </p>
+        </div>
+        </div>
+                
+                <div class="abt-in sec2">
+                    <img src="{% static 'imabor/image/me.png' %}">
+                    <h1> The Man </h1>
+                    <h3> Who built the app? </h3><br>
+                    <p style="line-height: 1.2;"> Perkenalkan saya <span class="name">M.Haikel Oksama</span> mahasiswa Uin Suska Riau Fakultas Sains dan teknologi prodi Sistem informasi <code>Kelas 3i</code> </p>
+                    
+                </div>
+                <div class="abt-in sec1">
+                    <img src="{% static 'imabor/image/djicon.png' %}">
+                    
+                    <h1> The App</h1>
+                    <h3> How this app Built? </h3><br>
+                    <p style="line-height: 1.2;"> Dikerjakan menggunakan framework <code>Django</code> yang berbasis bahasa pemrograman <code>Python.</code></p>
+                    <p style="font-size: 18px;"> Pelajari mengenai framework ini <a href="https://www.djangoproject.com/">Selengkapnya.</a></p>
+                   
+                </div>  
+              
+        </div>
+    </div>
+    <div class="col side">
+    </div>    
+</div>
+
+{% endblock %}

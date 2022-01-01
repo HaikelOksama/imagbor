@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title%}
+{{ name }}
+{% endblock %}
+{% load static %}   
+
+{% block content %}
+<div class="row">
+    {% for instance in objects %}
+           <div class="column">
+           <a href="{{ instance.absolute_img_url }}">
+           <img class="" id="myImg" src={{ instance.img_url }}>
+           </a>
+           </div>
+           
+       {% endfor %}
+</div>
+{% endblock %}

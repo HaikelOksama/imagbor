@@ -1,0 +1,179 @@
+<!doctype html>
+{% load static %}
+{% load basetags %}
+
+<head>
+<title>{% block title %}{% endblock %} / Imagbor</title>
+<link rel="stylesheet" type="text/css" href={% static 'imabor/css/style.css' %}>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src={% static 'imabor/js/script.js' %}></script>
+  
+<head>
+<body>
+<div class="header" id="section1">
+    <h1 style="color:aliceblue;"> IMAGBOR </h2>
+    <p style="color:aliceblue;"> Database Gambar Gratis </p>
+</div>
+
+<div class="navbar">
+    <a class="homebtn" href="{% url 'home' %}" style="width: 200px; transition: 0.2s;">Home</a>
+    <div class="subnav">
+        <button class="subnavbtn" href="#">Nature</button>
+        <div class="subnav-content">
+          <a href="/subtag/hewan">Hewan</a>
+          <a href="/subtag/tumbuhan">Tumbuhan</a>
+          <a href="/subtag/tanah">Tanah</a>
+          <a href="/subtag/air">Air</a>
+        </div>
+    </div>
+    <div class="subnav">
+        <button class="subnavbtn">Building</button>
+        <div class="subnav-content">
+          <a href="/subtag/kuno">Kuno</a>
+          <a href="/subtag/modern">Modern</a>
+          <a href="/subtag/pencakar_langit">Pencakar Langit</a>
+          <a href="/subtag/eastern">Eastern</a>
+        </div>
+    </div>  
+    <div class="subnav">
+        <button class="subnavbtn">Space</button>
+        <div class="subnav-content">
+          <a href="/subtag/planet">Planet</a>
+          <a href="/subtag/bintang">Bintang</a>
+          <a href="/subtag/galaxy">Galaxy</a>
+          <a href="/subtag/spaceship">Spaceship</a>
+        </div>
+    </div>  
+    <div class="subnav">
+        <button class="subnavbtn">Animasi</i></button>
+        <div class="subnav-content">
+          <a href="/subtag/anime">Anime</a>
+          <a href="/subtag/disney">Disney</a>
+          <a href="/subtag/karikatur">Karikatur</a>
+          <a href="/subtag/unik">Unik</a>
+        </div>
+    </div>
+    <div style="float: right;" class="dropdown">      
+      <a href="{% url 'about' %}">About Site</a>
+    </div>
+      <div style="float: right;" class="dropdown">
+        <button class="dropbtn">Akun</button>
+        <div class="dropdown-content">
+          <a href="#">LOGIN</a>
+          <a href="#">DAFTAR</a>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="sidebar">
+        <div class="search">
+            <h4>Pencarian</h4>
+            <form  method="GET" action="{% url 'result' %}" >
+                <div>
+                    <div class="formin">
+                        
+                        <input type="text" placeholder="Cari" name="searched">
+                    </div>
+                    <input type="submit" value="search">
+                </div>
+            </form>
+        </div>
+        <div>
+            <h4>Tags</h4>
+            <ul>
+              <br>
+              <h3><a href="{% url 'nature' %}"> Nature <span class="count">[{% nature_len %}]</span></a></h3>
+              <li>Hewan</li>
+                <li>Tumbuhan</li>
+                <li>Tanah</li>
+                <li>Air</li>
+                <hr>
+                <h3><a href="{% url 'building' %}"> Building <span class="count">[{% building_len %}]</span></a></h3>
+                <li>Kuno</li>
+                <li>Modern</li>
+                <li>Pencakar Langit</li>
+                <li>Eastern</li>
+                <hr>
+                <h3><a href="{% url 'space' %}"> Space <span class="count">[{% space_len %}]</span></a></h3>
+                <li>Planet</li>
+                <li>Bintang</li>
+                <li>Galaxy</li>
+                <li>Space ship</li>
+                <hr>
+                <h3><a href="{% url 'animasi' %}"> Animasi <span class="count">[{% animasi_len %}]</span></a></h3>
+                <li>Anime</li>
+                <li>Disney</li>
+                <li>Karikatur</li>
+                <li>Unik</li>
+                <br>
+                
+            </ul>
+            <a class="about" href="{% url 'about' %}">ABOUT</a>
+            <img class="sideimg" src="{% static 'imabor/image/image3-1-1.gif' %}">
+        </div>
+    </div>
+
+    <div class="main">
+    {% block content %}{% endblock content %}
+    </div>
+
+    <div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption">
+    </div>
+    
+</div>
+</div>
+
+<a href="#section1" class="float">
+  <span class="arrow"></span>
+  <p>TOP</p>
+  </a>
+
+<div class="footer">
+    <h4>© M. Haikel Oksama</h4>
+    <p>Sistem Informasi Kelas 3i</p>
+    <a href="https://www.instagram.com/haikel.oxama/" target="_blank"><i class="fa fa-instagram" id="facebook"></i></a>
+    <a href=""><i class="fa fa-twitter" id="twitter"></i></a>
+    <a href="https://github.com/HaikelOksama" target="_blank"><i class="fa fa-github-square github" id="github"></i></a>
+    
+</div> 
+
+<script>
+ // create references to the modal...
+    var modal = document.getElementById('myModal');
+    // to all images -- note I'm using a class!
+    var images = document.getElementsByClassName('myImages');
+    // the image in the modal
+    var modalImg = document.getElementById("img01");
+    // and the caption in the modal
+    var captionText = document.getElementById("caption");
+    
+    // Go through all of the images with our custom class
+    for (var i = 0; i < images.length; i++) {
+      var img = images[i];
+      // and attach our click listener for this image.
+      img.onclick = function(evt) {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+      }
+    }
+    
+    var span = document.getElementsByClassName("close")[0];
+    
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+    
+</script>
+
+</body>

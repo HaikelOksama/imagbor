@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title%}
+    {{ name }}
+{% endblock %}
+
+{% load static %}  
+
+ 
+{% block content %}
+<div class="row">
+    <div class="col side">
+    </div>
+    <div class="col mid">
+        <div class="img-container">
+            
+            <img class="myImages" id="myImg" src={{ objects.img_url }} alt="{{ objects.img_alt }}" style="width: 100%;">
+        </div>
+
+        <div class="table-container">
+            <table id="info">
+                <tr>
+                    <th>Title :</th>
+                    <td>{{ objects.img_title }}</td>
+                </tr>
+                <tr>
+                    <th>Tags :</th>
+                    <td>{{ objects.img_tags }}</td>
+                </tr>
+                <tr>
+                    <th>SubTags :</th>
+                    <td>{{ objects.tag_list }}</td>
+                </tr>
+            </table>        
+        </div>
+    </div>     
+    <div class="col side">
+    </div>
+</div>         
+
+
+{% endblock %}

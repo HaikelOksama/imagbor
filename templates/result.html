@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title%}
+{{ name }}
+{% endblock %}
+{% load static %}   
+
+{% block content %}
+{% if search and number != 0 %}
+<center>
+    <h2> Hasil Pencarian /<span class="stags"> {{ search|cut:" " }} </span>  : ( <strong> {{ number }}</strong> )</h2>
+</center>
+<div class="row">         
+            {% for images in result %}
+                <div class="column">
+                <a href="{{ images.absolute_img_url }}">
+                    <img class="" id="myImg" src={{ images.img_url }}>
+                </a>
+                </div>
+            {% endfor %}                 
+</div>
+
+{% else %}
+<h2> Tidak ada gambar ditemukan!</h2>
+{% endif %}
+
+
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block title%}
+{{ name }}
+{% endblock %}
+{% load static %}   
+
+{% block content %}
+
+<div class="row">
+    {% comment %} <div class="column">
+        {% for instance in row1 %}
+        <a href="{{ instance.absolute_img_url }}">
+        <img class="" id="myImg" src={{ instance.img_url }}>
+        </a>
+        {% endfor %}
+    </div>
+
+    <div class="column">
+        {% for instance in row2 %}
+        <a href="{{ instance.absolute_img_url }}">
+        <img class="" id="myImg" src={{ instance.img_url }}>
+        </a>
+        {% endfor %}
+    </div>
+
+    <div class="column">
+        {% for instance in row3 %}
+        <a href="{{ instance.absolute_img_url }}">
+        <img class="" id="myImg" src={{ instance.img_url }}>
+        </a>
+        {% endfor %}
+    </div>
+
+    <div class="column">
+        {% for instance in row4 %}
+        <a href="{{ instance.absolute_img_url }}">
+        <img class="" id="myImg" src={{ instance.img_url }}>
+        </a>
+        {% endfor %}
+    </div> {% endcomment %}
+    
+    {% for instance in objectlist %}
+    <div class="column">
+        <a href="{{ instance.absolute_img_url }}">
+        <img class="" id="myImg" src={{ instance.img_url }}>
+        </a>
+    </div>    
+    {% endfor %}
+
+</div>
+          
+{% endblock %}
